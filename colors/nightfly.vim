@@ -3,7 +3,7 @@
 " Note: Inspiration taken from: Sarah Drasner's Night Owl theme and my own
 " moonfly theme.
 "
-" URL:     github.com/bluz71/vim-nightfly-guicolors
+" URL:     github.com/S1M1S/vim-totoro-tc
 " License: MIT (https://opensource.org/licenses/MIT)
 
 highlight clear
@@ -11,7 +11,7 @@ set background=dark
 if exists('syntax_on')
     syntax reset
 endif
-let g:colors_name='nightfly'
+let g:colors_name='totoro'
 
 " Please check that Vim/Neovim is able to run this true-color only theme.
 "
@@ -35,30 +35,30 @@ else " Vim
 endif
 
 " By default do not color the cursor.
-let g:nightflyCursorColor = get(g:, 'nightflyCursorColor', 0)
+let g:totoroCursorColor = get(g:, 'totoroCursorColor', 0)
 
 " By default use the nightly color palette in the `:terminal`
-let g:nightflyTerminalColors = get(g:, 'nightflyTerminalColors', 1)
+let g:totoroTerminalColors = get(g:, 'totoroTerminalColors', 1)
 
 " By default do not underline matching parentheses.
-let g:nightflyUnderlineMatchParen = get(g:, 'nightflyUnderlineMatchParen', 0)
+let g:totoroUnderlineMatchParen = get(g:, 'totoroUnderlineMatchParen', 0)
 
 " By default do use undercurls in GUI versions of Vim, including terminal Vim
 " with termguicolors set.
-let g:nightflyUndercurls = get(g:, 'nightflyUndercurls', 1)
+let g:totoroUndercurls = get(g:, 'totoroUndercurls', 1)
 
 " By default do use italics in GUI versions of Vim.
-let g:nightflyItalics = get(g:, 'nightflyItalics', 1)
+let g:totoroItalics = get(g:, 'totoroItalics', 1)
 "
 " By default do not use a transparent background in GUI versions of Vim.
-let g:nightflyTransparent = get(g:, 'nightflyTransparent', 0)
+let g:totoroTransparent = get(g:, 'totoroTransparent', 0)
 
 " By default do not use a customized 'NormalFloat' highlight group (for Neovim
 " floating windows).
-let g:nightflyNormalFloat = get(g:, 'moonflyNormalFloat', 0)
+let g:totoroNormalFloat = get(g:, 'moonflyNormalFloat', 0)
 
 " Background and foreground
-let s:black      = '#011627'
+let s:black      = '#2c2e34'
 let s:white      = '#c3ccdc'
 " Variations of blue-grey
 let s:black_blue = '#081e2f'
@@ -87,7 +87,7 @@ let s:emerald    = '#21c7a8'
 let s:green      = '#a1cd5e'
 
 " Specify the colors used by the inbuilt terminal of Neovim and Vim
-if g:nightflyTerminalColors
+if g:totoroTerminalColors
     if has('nvim')
         let g:terminal_color_0  = s:regal_blue
         let g:terminal_color_1  = s:red
@@ -116,7 +116,7 @@ if g:nightflyTerminalColors
 endif
 
 " Background and text
-if g:nightflyTransparent
+if g:totoroTransparent
     exec 'highlight Normal guibg=NONE' . ' guifg=' . s:white
 else
     exec 'highlight Normal guibg=' . s:black . ' guifg=' . s:white
@@ -126,7 +126,7 @@ endif
 exec 'highlight ModeMsg guifg=' . s:cadet_blue . ' gui=none'
 
 " Comments
-if g:nightflyItalics
+if g:totoroItalics
     exec 'highlight Comment guifg=' . s:grey_blue . ' gui=italic'
 else
     exec 'highlight Comment guifg=' . s:grey_blue
@@ -218,7 +218,7 @@ exec 'highlight PmenuThumb guibg=' . s:steel_blue
 exec 'highlight WildMenu guibg=' . s:cyan_blue . ' guifg=fg'
 
 " Spelling errors
-if g:nightflyUndercurls
+if g:totoroUndercurls
     exec 'highlight SpellBad gui=undercurl guisp=' . s:red
     exec 'highlight SpellCap gui=undercurl guisp=' . s:blue
     exec 'highlight SpellRare gui=undercurl guisp=' . s:yellow
@@ -234,7 +234,7 @@ endif
 exec 'highlight Question guifg=' . s:green . ' gui=none'
 exec 'highlight MoreMsg guifg=' . s:red . ' gui=none'
 exec 'highlight LineNr guibg=bg guifg=' . s:steel_blue
-if g:nightflyCursorColor
+if g:totoroCursorColor
     exec 'highlight Cursor guifg=bg guibg=' . s:blue
 else
     exec 'highlight Cursor guifg=bg guibg=' . s:cadet_blue
@@ -248,7 +248,7 @@ exec 'highlight FoldColumn guibg=' . s:slate_blue . ' guifg=' . s:green
 exec 'highlight SignColumn guibg=bg guifg=' . s:green
 exec 'highlight Todo guibg=' . s:yellow . ' guifg=' . s:black
 exec 'highlight SpecialKey guibg=bg guifg=' . s:blue
-if g:nightflyUnderlineMatchParen
+if g:totoroUnderlineMatchParen
     exec 'highlight MatchParen guibg=bg gui=underline'
 else
     exec 'highlight MatchParen guibg=' . s:regal_blue
@@ -261,7 +261,7 @@ exec 'highlight Delimiter guifg=' . s:white
 " Neovim only highlight groups
 exec 'highlight Whitespace guifg=' . s:deep_blue
 exec 'highlight TermCursor guibg=' . s:cadet_blue . ' guifg=bg gui=none'
-if g:nightflyNormalFloat
+if g:totoroNormalFloat
     exec 'highlight NormalFloat guibg=bg guifg=' . s:cadet_blue
 endif
 exec 'highlight FloatBorder guibg=bg guifg=' . s:slate_blue
@@ -272,7 +272,7 @@ exec 'highlight ColorColumn guibg=' . s:black_blue
 " Conceal color, as used by indentLine plugin
 exec 'highlight Conceal guibg=NONE guifg=' . s:deep_blue
 
-" Custom nightfly highlight groups
+" Custom totoro highlight groups
 exec 'highlight NightflyReset guifg=fg'
 exec 'highlight NightflyWhite guifg=' . s:white
 exec 'highlight NightflyRegalBlue guifg=' . s:regal_blue
@@ -441,7 +441,7 @@ highlight! link htmlTag NightflyGreen
 highlight! link htmlTagN NightflyBlue
 highlight! link htmlTagName NightflyBlue
 highlight! link htmlUnderline NightflyWhite
-if g:nightflyItalics
+if g:totoroItalics
     exec 'highlight htmlBoldItalic guibg=' . s:black . ' guifg=' . s:orange . ' gui=italic'
     exec 'highlight htmlBoldUnderlineItalic guibg=' . s:black . ' guifg=' . s:orange . ' gui=italic'
     exec 'highlight htmlItalic guifg=' . s:cadet_blue . ' gui=italic'
@@ -752,7 +752,7 @@ highlight! link netrwExe NightflyTan
 highlight! link tagName NightflyTurquoise
 highlight! link Cheat40Header NightflyBlue
 highlight! link Beacon NightflyWhite
-if g:nightflyUnderlineMatchParen
+if g:totoroUnderlineMatchParen
     exec 'highlight MatchWord gui=underline guisp=' . s:orange
 else
     highlight! link highlight NightflyOrange
@@ -767,7 +767,7 @@ exec 'highlight DiffDelete guibg=' . s:slate_blue . ' guifg=' . s:watermelon ' g
 exec 'highlight DiffText guibg=' . s:blue . ' guifg=bg gui=none'
 
 " Neomake plugin
-if g:nightflyUndercurls
+if g:totoroUndercurls
     exec 'highlight NeomakeError guibg=bg gui=undercurl guisp=' . s:red
     exec 'highlight NeomakeWarning guibg=bg gui=undercurl guisp=' . s:yellow
     exec 'highlight NeomakeInfo guibg=bg gui=undercurl guisp=' . s:blue
@@ -784,7 +784,7 @@ highlight! link NeomakeInfoSign NightflyBlueAlert
 highlight! link NeomakeMessageSign NightflyWhiteAlert
 
 " ALE plugin
-if g:nightflyUndercurls
+if g:totoroUndercurls
     exec 'highlight ALEError guibg=bg gui=undercurl guisp=' . s:red
     exec 'highlight ALEWarning guibg=bg gui=undercurl guisp=' . s:yellow
     exec 'highlight ALEInfo guibg=bg gui=undercurl guisp=' . s:blue
@@ -801,7 +801,7 @@ highlight! link ALEVirtualTextInfo NightflySteelBlue
 highlight! link ALEInfoSign NightflyBlueAlert
 
 " Neovim LSP diagnostics
-if g:nightflyUndercurls
+if g:totoroUndercurls
     exec 'highlight LspDiagnosticsUnderlineError guibg=bg gui=undercurl guisp=' . s:red
     exec 'highlight LspDiagnosticsUnderlineWarning guibg=bg gui=undercurl guisp=' . s:yellow
     exec 'highlight LspDiagnosticsUnderlineInformation guibg=bg gui=undercurl guisp=' . s:blue
